@@ -1,6 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
+require_once 'InterfaceThreadProcess.php';
 require_once 'ThreadProcessLead.php';
 
 /**
@@ -18,13 +19,17 @@ final class ProcessLeads
 
     private $startedAt;
 
-    /** Фиксируем время запуска */
+    /**
+     * Фиксируем время запуска
+     */
     public function __construct()
     {
         $this->startedAt = microtime(true);
     }
 
-    /** Запускаем генерацию и обработку лидов в потоках */
+    /**
+     * Запускаем генерацию и обработку лидов в потоках
+     */
     public function run()
     {
         $pool = new Pool(self::THREADS_COUNT);
@@ -39,6 +44,9 @@ final class ProcessLeads
         $pool->shutdown();
     }
 
+    /**
+     * Выводим время работы
+     */
     public function __destruct()
     {
         echo sprintf(

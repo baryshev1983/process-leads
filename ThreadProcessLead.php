@@ -7,16 +7,18 @@ use \LeadGenerator\Lead;
  * Class ThreadProcessLead
  * @property $lead Lead
  */
-final class ThreadProcessLead extends Threaded
+final class ThreadProcessLead extends Threaded implements InterfaceThreadProcess
 {
     const LOG_FILE = 'log.txt';
-    
+
     public function __construct(Lead $lead)
     {
         $this->lead = $lead;
     }
 
-    /** Записываем обработанный лид в файл */
+    /**
+     * Записываем обработанный лид в файл
+     */
     private function logResultOfWork()
     {
         file_put_contents(self::LOG_FILE,
@@ -29,7 +31,9 @@ final class ThreadProcessLead extends Threaded
         );
     }
 
-    /** Обрабатываем полученный лид */
+    /**
+     * Обрабатываем полученный лид
+     */
     public function run()
     {
         sleep(2);
