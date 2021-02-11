@@ -2,6 +2,7 @@
 ```bash
 git clone https://github.com/baryshev1983/process-leads.git
 composer install
+cd process-leads
 php index.php
 ```
 ```bash
