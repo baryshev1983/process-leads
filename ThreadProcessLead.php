@@ -9,6 +9,8 @@ use \LeadGenerator\Lead;
  */
 final class ThreadProcessLead extends Threaded
 {
+    const LOG_FILE = 'log.txt';
+    
     public function __construct(Lead $lead)
     {
         $this->lead = $lead;
@@ -17,7 +19,7 @@ final class ThreadProcessLead extends Threaded
     /** Записываем обработанный лид в файл */
     private function logResultOfWork()
     {
-        file_put_contents('file.log',
+        file_put_contents(self::LOG_FILE,
             sprintf("%s | %s | %s\n",
                 $this->lead->id,
                 $this->lead->categoryName,
