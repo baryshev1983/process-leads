@@ -13,6 +13,13 @@ docker-compose up
 
 ### Запуск кода вручную
 ```bash
+docker run -ti pthreads bash
+```
+```bash
+php index.php
+```
+или
+```bash
 docker-compose run php index.php
 ```
 
