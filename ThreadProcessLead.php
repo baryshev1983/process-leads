@@ -1,4 +1,5 @@
 <?php
+require_once 'InterfaceThreadProcess.php';
 
 use \LeadGenerator\Lead;
 

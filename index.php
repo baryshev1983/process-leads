@@ -1,7 +1,6 @@
 <?php
 
 require_once 'vendor/autoload.php';
-require_once 'InterfaceThreadProcess.php';
 require_once 'ThreadProcessLead.php';
 
 /**
