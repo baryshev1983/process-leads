@@ -31,6 +31,8 @@ final class ProcessLeads
      */
     public function run()
     {
+        echo "Запуск обработки лидов\n";
+
         $pool = new Pool(self::THREADS_COUNT);
 
         (new \LeadGenerator\Generator)->generateLeads(
